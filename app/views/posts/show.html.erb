@@ -1,0 +1,17 @@
+<div id="post">
+  <%= render :partial => "post", :object => @post %>
+</div>
+<div id="comment_list">
+  <p><%= render :partial => "comments/comment", :collection => @post.comments.approved %></p>
+</div>
+<div id="comment_form">
+  <%= error_messages_for :comment %>
+
+  <% form_remote_for(:comment, :url => comments_url, :html => {:id => "addform"}) do |f| %>
+    <%= render :partial => "comments/form", :locals => { :f => f } %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+  <p>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>
+</div>

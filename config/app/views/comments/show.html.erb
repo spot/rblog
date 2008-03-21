@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong><%=h @comment.name %>
+</p>
+<p>
+  <strong>Email:</strong><%=h @comment.email %>
+</p>
+<p>
+  <strong>Url:</strong><%=h @comment.url %>
+</p>
+<p>
+  <strong>Comment:</strong><%=h @comment.comment %>
+</p>
+<p>
+  <strong>Post:</strong><%=h @comment.post %>
+</p>
+<p>
+  <strong>Approve:</strong><%=h @comment.approve %>
+</p>
+
+<%= link_to 'Edit', edit_object_url %>
+|
+<%= link_to 'Back', collection_url %>

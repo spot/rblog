@@ -1,0 +1,15 @@
+<h2><%= link_to post.title,  {:controller => 'posts', :action => 'show', :permalink => post.permalink} %></h2>
+<p class="file"><small><%= post.created_at.strftime("%B #{post.created_at.day.ordinalize}, %Y") %>  by <%= post.user.login %></small></p>
+<p>
+	<% if @truncate == true %>
+		<%= awesome_truncate(post.body, 255, " ") %>
+		<% if post.body.length > 255 %>
+			<%= link_to "Read More", {:controller => 'posts', :action => 'show', :permalink => post.permalink} %>
+		<% end %>
+	<% else %>
+		<%= post.body %>
+	<% end %>
+</p>
+<p><h4>Tagged:</h4>
+<%= post.tags.collect { |tag| link_to tag.name, { :action => :tag, :id => tag.id } }.join(', ') %><br /></p>
+<p class="posted">Posted in <%= post.categories.collect { |cat| link_to cat.name, category_path(cat)}.join(', ') %> | <span id="comment_count"><%= pluralize(post.comments.size, "Comment") %></span></p>

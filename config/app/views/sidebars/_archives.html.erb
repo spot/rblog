@@ -1,0 +1,10 @@
+<% cache 'archive_list' do %>
+<li>
+  <h2>Archives</h2>
+    <ul>
+      <% for archive in Archive.find_all %>
+        <li><%= archive.month %> (<%= archive.posts.size %>)</li>
+      <% end %>
+    </ul>
+</li>
+<% end %>

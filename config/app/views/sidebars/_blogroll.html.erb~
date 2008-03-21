@@ -1,0 +1,8 @@
+<li>
+  <h2>Blogroll</h2>
+    <ul>
+      <% for link in Link.find(:all) %>
+        <li><%= link_to link.name, link.url %></li>
+      <% end %>
+    </ul>
+</li>

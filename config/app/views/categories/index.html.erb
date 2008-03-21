@@ -1,0 +1,3 @@
+<% for cat in Category.find_sort %>
+    <%= render :partial => "posts", :object => cat %>
+<% end %>

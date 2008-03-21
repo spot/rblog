@@ -1,0 +1,4 @@
+page.insert_html :bottom, :comment_list, :partial => "comment", :object => @comment
+page.replace_html :comment_count, pluralize(@comment.post.comments.size, "Comment")
+page[:addform].reset
+page.replace :notice, flash[:notice]

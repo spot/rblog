@@ -1,0 +1,10 @@
+<% cache 'cat_list' do %>
+<li>
+  <h2>Categories</h2>
+    <ul>
+      <% for cat in Category.find_sort %>
+        <li><%= link_to cat.name, cat %> (<%= cat.posts.size %>)</li>
+      <% end %>
+    </ul>
+</li>
+<% end %>

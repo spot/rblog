@@ -1,0 +1,14 @@
+one:
+  id: 1
+  title: MyString
+  body: MyText
+  user: 
+  permalink: MyString
+  publish: false
+two:
+  id: 2
+  title: MyString
+  body: MyText
+  user: 
+  permalink: MyString
+  publish: false

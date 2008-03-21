@@ -1,0 +1,21 @@
+<h1>Listing Categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Sort</th>
+  </tr>
+  <%- @categories.each do |category|%>
+    <tr>
+      <td><%=h category.name %></td>
+      <td><%=h category.sort %></td>
+    
+      <td><%=link_to 'Show', object_url(category) %></td>
+      <td><%=link_to 'Edit', edit_object_url(category) %></td>
+      <td><%=link_to 'Destroy', object_url(category), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+
+<%= link_to 'New Category', new_object_url %>

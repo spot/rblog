@@ -1,0 +1,28 @@
+<p>
+  <label for="post_title">Title:</label>
+  <%= f.text_field :title %>
+</p>
+ </p>
+  <% for category in Category.find(:all, :order => "sort") %>
+  <div>
+    <%= check_box_tag "post[category_ids][]", category.id, @post.categories.include?(category) %>
+    <%= category.name %>
+  </div>
+  <% end %>
+  <p>
+<p>
+  <label for="post_body">Body:</label>
+  <%= f.text_area :body %>
+</p>
+<p>
+	<label for="post_tags">Tags:</label>
+	<%= f.text_field :tag_list %>
+</p>
+<p>
+  <label for="post_permalink">Permalink:</label>
+  <%= f.text_field :permalink %>
+</p>
+<p>
+  <label for="post_publish">Publish:</label>
+  <%= f.check_box :publish %>
+</p>

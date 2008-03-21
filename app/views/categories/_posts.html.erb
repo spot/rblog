@@ -1,0 +1,6 @@
+<h2>Posts in <%= posts.name %></h2>
+<ul>
+<% for post in posts.posts %>
+  <li><%= link_to post.title, post %> | Posted: <%= post.created_at.strftime("%B #{post.created_at.day.ordinalize}, %Y") %> by <%= post.user.login %></li>
+<% end %>
+</ul>

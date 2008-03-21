@@ -1,0 +1,19 @@
+<p>
+  <strong>Title:</strong><%=h @post.title %>
+</p>
+<p>
+  <strong>Body:</strong><%=h @post.body %>
+</p>
+<p>
+  <strong>User:</strong><%=h @post.user.login %>
+</p>
+<p>
+  <strong>Permalink:</strong><%=h @post.permalink %>
+</p>
+<p>
+  <strong>Publish:</strong><%=h @post.publish %>
+</p>
+
+<%= link_to 'Edit', edit_object_url %>
+|
+<%= link_to 'Back', collection_url %>
