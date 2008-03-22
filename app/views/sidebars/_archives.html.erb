@@ -1,10 +1,13 @@
 <% cache 'archive_list' do %>
 <li>
   <h2>Archives</h2>
-    <ul>
       <% for archive in Archive.find_all %>
-        <li><%= archive.month %> (<%= archive.posts.size %>)</li>
+        <%= archive.year %> (<%= archive.posts.size %>)
+        <ul>
+        	<% for arc in Archive.find(:all, :conditions => ["year = ?", archive.year]) %>
+        		<li><%= arc.month %> (<%= arc.posts.size %>)</li>
+        	<% end %>
+        </ul>
       <% end %>
-    </ul>
 </li>
 <% end %>

@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
   protected  
   # Method to add an existing archive or create a new one.
   def make_archive    
-    if @a = Archive.find_by_month(Time.now.strftime('%B'))      
+    if @a = Archive.find(:first, :conditions => ["month = ? and year = ?", Time.now.strftime('%B'), Time.now.strftime('%Y')])      
       self.archive_id = @a.id    
     else      
       @a = Archive.create(:month => Time.now.strftime('%B'), :year => Time.now.strftime('%Y'))      
