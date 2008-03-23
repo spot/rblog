@@ -7,4 +7,8 @@ class ArchivesController < ApplicationController
 		@archives = Archive.find_all
 	end
 	
+	def show_year
+		@archive = Archive.find_by_year(params[:year])
+	end
+	
 end

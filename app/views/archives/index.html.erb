@@ -1,0 +1,15 @@
+<ul>
+    <% for archive in @archives %>
+        <li><h2><%= archive.year %></h2></li>
+        <ul>
+        	<% for month in Archive.find(:all, :conditions => ["year = ?", archive.year]) %>
+        		<li><%= month.month %></li>
+        			<ul>
+        			<% for post in month.posts %>
+        				<li><%= link_to post.permalink, post %></li>
+        			<% end %>
+        			</ul>
+        	<% end %>
+        </ul>
+    <% end %>
+</ul>
